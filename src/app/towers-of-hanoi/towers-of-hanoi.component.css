@@ -1,0 +1,107 @@
+.toh {
+  margin-top: 50px;
+  font-family: "Agency FB";
+  font-size: 20px;
+  border: mediumpurple 2px solid;
+  display: flex;
+  background-color: lavender;
+}
+#t1 {
+  width: 100px;
+  height: 300px;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 100px;
+}
+#t2 {
+  width: 100px;
+  height: 300px;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: 120px;
+  margin-right: 126px;
+}
+#t3 {
+  width: 100px;
+  height: 300px;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: 100px;
+}
+#disk3 {
+  width: 100px;
+  height: 20px;
+  background-color: blueviolet;
+  margin: 5px;
+  color: blueviolet;
+}
+#disk2 {
+  width: 80px;
+  height: 20px;
+  background-color: dodgerblue;
+  margin: 5px;
+  color: dodgerblue;
+}
+#disk1 {
+  width: 60px;
+  height: 20px;
+  background-color: coral;
+  margin: 5px;
+  color: coral;
+}
+.disk {
+  height: 20px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  border: 1px solid black;
+  font-size: 0;
+  border-bottom: solid 1px #ccc;
+  flex-direction: row;
+  box-sizing: border-box;
+  cursor: move;
+}
+.diskTower {
+  margin-top: 170px;
+  display: block;
+  justify-content: center;
+  align-self: center;
+  flex-direction: column;
+  border: solid 1px #ccc;
+  min-height: 60px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+  0 8px 10px 1px rgba(0, 0, 0, 0.14),
+  0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.disk:last-child {
+  border: none;
+}
+
+.diskTower.cdk-drop-list-dragging .disk:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}

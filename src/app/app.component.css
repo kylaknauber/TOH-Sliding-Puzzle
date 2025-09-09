@@ -1,0 +1,22 @@
+.App {
+  text-align: center;
+  margin: 50px auto 0 auto;
+  border: purple 2px solid;
+  width: 50%;
+  background-color: plum;
+  padding: 20px 40px 50px;
+}
+#heading {
+  font-family: "Agency FB";
+  font-size: 70px;
+}
+#toh {
+  font-family: "Agency FB";
+  font-size: 40px;
+  margin-right: 30px;
+}
+#sp {
+  font-family: "Agency FB";
+  font-size: 40px;
+  margin-left: 30px;
+}

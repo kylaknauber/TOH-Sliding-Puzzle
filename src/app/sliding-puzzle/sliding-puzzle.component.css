@@ -1,0 +1,52 @@
+.sp{
+  margin: 50px auto 0 auto;
+  height: 400px;
+  width: 400px;
+  display: flex;
+  background-color: midnightblue ;
+  border-radius: 12px;
+}
+.gridBox {
+  margin: 20px auto 0 auto;
+  height: 350px;
+  width: 350px;
+  border: 3px solid black;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "square square square square"
+    "square square square square"
+    "square square square square"
+    "square square square square";
+}
+.square {
+  flex: 1;
+  background-color: lightslategray;
+  border: 1px solid black;
+  border-radius: 4px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+  font-family: "Agency FB";
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.innerSquare:last-child {
+  border: none;
+}
+
+.square.cdk-drop-list-dragging .innerSquare:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}

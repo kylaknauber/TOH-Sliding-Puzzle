@@ -1,0 +1,72 @@
+<div class="toh">
+  <!--   <div class="toh" cdkDropListGroup>-->
+    <div class="tower" id="t1">
+      <h3 class="title">tower 1</h3>
+      <div
+        cdkDropList
+        #tower1List = "cdkDropList"
+        [cdkDropListData]="tower1"
+        [cdkDropListConnectedTo]="[tower1List, tower2List, tower3List]"
+        class="diskTower"
+        (cdkDropListDropped)="moveDisk($event)">
+        <div class="disk" *ngFor="let disk of tower1" [style.background-color]="getDiskColor(disk)" [style.width]="getDiskWidth(disk)" cdkDrag>{{disk}}</div>
+      </div>
+    </div>
+    <div class="tower" id="t2">
+        <h3 class="title">tower 2</h3>
+        <div
+          cdkDropList
+          #tower2List = "cdkDropList"
+          [cdkDropListData]="tower2"
+          [cdkDropListConnectedTo]="[tower1List, tower2List, tower3List]"
+          class="diskTower"
+          (cdkDropListDropped)="moveDisk($event)">
+          <div class="disk" *ngFor="let disk of tower2" [style.background-color]="getDiskColor(disk)" [style.width]="getDiskWidth(disk)" cdkDrag>{{disk}}</div>
+        </div>
+    </div>
+
+    <div class="tower" id="t3">
+        <h3 class="title">tower 3</h3>
+        <div
+          cdkDropList
+          #tower3List = "cdkDropList"
+          [cdkDropListData]="tower3"
+          [cdkDropListConnectedTo]="[tower2List, tower1List, tower3List]"
+          class="diskTower"
+          (cdkDropListDropped)="moveDisk($event)">
+          <div class="disk" *ngFor="let disk of tower3" [style.background-color]="getDiskColor(disk)" [style.width]="getDiskWidth(disk)" cdkDrag>{{disk}}</div>
+
+        </div>
+    </div>
+
+
+
+</div>
+
+<div *ngIf="isWinner" class="tower">
+  <h1>You Win!</h1>
+  <button (click)="resetGame()">Play Again?</button>
+</div>
+    <!-- </div>-->
+  <!--
+  <div class="tower" id="tower2">
+    <h3 class="title">tower 2</h3>
+    <div
+      cdkDropList
+      [cdkDropListData]="tower2"
+      class="diskTower"
+      (cdkDropListDropped)="moveDisk($event)">
+      <div class="disk" cdkDrag *ngFor="let disk of tower2">{{disk}}</div>
+    </div>
+  </div>
+  <div class="tower" id="tower3">
+    <h3 class="title">tower 3</h3>
+    <div
+      cdkDropList
+      [cdkDropListData]="tower3"
+      class="diskTower"
+      (cdkDropListDropped)="moveDisk($event)">
+      <div class="disk" cdkDrag *ngFor="let disk of tower3">{{disk}}</div>
+    </div>
+  -->
+
