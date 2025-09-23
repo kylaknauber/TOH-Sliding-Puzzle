@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {RouterLink, RouterOutlet} from '@angular/router';
+import {RouterLink, RouterOutlet, RouterLinkActive} from '@angular/router';
 import {TowersOfHanoiComponent} from "./towers-of-hanoi/towers-of-hanoi.component";
 import {SlidingPuzzleComponent} from "./sliding-puzzle/sliding-puzzle.component";
 import {NgModule} from "@angular/core";
@@ -45,7 +45,13 @@ const routes: Routes = [
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, TowersOfHanoiComponent, SlidingPuzzleComponent, RouterLink, NgIf],
+  imports: [
+    RouterOutlet, 
+    TowersOfHanoiComponent, 
+    SlidingPuzzleComponent, 
+    RouterLink,
+    RouterLinkActive, 
+    NgIf],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

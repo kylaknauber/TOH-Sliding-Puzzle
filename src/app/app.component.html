@@ -2,8 +2,14 @@
   <h1 id="heading">Choose a Game to Play</h1>
   <nav>
 
-        <a id="toh" [routerLink]="'/towers-of-hanoi'">Towers of Hanoi</a>
-        <a id="sp" [routerLink]="'/sliding-puzzle'">Sliding Puzzle</a>
+        <a id="toh" 
+          [routerLink]="'/towers-of-hanoi'"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }">Towers of Hanoi</a>
+        <a id="sp" 
+          [routerLink]="'/sliding-puzzle'"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }">Sliding Puzzle</a>
 
 
       <!--
