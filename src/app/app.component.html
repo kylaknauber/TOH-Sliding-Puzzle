@@ -1,7 +1,6 @@
 <div class="App">
   <h1 id="heading">Choose a Game to Play</h1>
   <nav>
-
         <a id="toh" 
           [routerLink]="'/towers-of-hanoi'"
           routerLinkActive="active"
@@ -10,27 +9,6 @@
           [routerLink]="'/sliding-puzzle'"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }">Sliding Puzzle</a>
-
-
-      <!--
-       <button (click)="toh=!toh" >Towers of Hanoi</button>
-      <button (click)="sp=!sp" >Sliding Puzzle</button>
-       -->
   </nav>
   <router-outlet></router-outlet>
-
-
-   <!--
-
-
-    <div *ngIf="toh">
-      <app-towers-of-hanoi></app-towers-of-hanoi>
-    </div>
-    <div *ngIf="sp">
-      <app-sliding-puzzle></app-sliding-puzzle>
-    </div>
-   -->
-
-
-
 </div>

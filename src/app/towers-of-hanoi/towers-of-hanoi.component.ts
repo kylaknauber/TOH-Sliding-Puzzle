@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import {ActivatedRoute, RouterOutlet, RouterLink} from '@angular/router';
 import {
   CdkDrag,
@@ -31,6 +31,7 @@ export class TowersOfHanoiComponent {
   tower2: string[] = [];
   tower3: string[] = [];
   isWinner: boolean = false;
+
   constructor(private route: ActivatedRoute) {
   }
   getDiskColor(name: string) {

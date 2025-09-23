@@ -4,7 +4,7 @@
   font-size: 20px;
   border-radius: 20px;
   padding: 10px;
-  gap: 30px;
+  gap: 50px;
   display: flex;
   width: 600px;
   align-items: center;
@@ -53,6 +53,24 @@
   margin: 5px;
   color: coral;
 }
+.bottom {
+  background-color: black;
+  width: 130px;
+  height: 25px;
+}
+.tower {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.tower::before {
+  content: "";
+  position: absolute;
+  height: 225px;
+  width: 8px;      /* peg thickness */
+  background: black;
+  z-index: 0;      /* keep behind disks */
+}
 .disk {
   height: 25px;
   display: flex;
@@ -62,6 +80,8 @@
   flex-direction: row;
   box-sizing: border-box;
   cursor: move;
+  position: relative;
+  z-index: 1;
 }
 .diskTower {
   display: flex;
@@ -69,10 +89,62 @@
   justify-content: end;
   align-self: center;
   flex-direction: column;
-  border: solid 1px #ccc;
   min-height: 200px;
   border-radius: 4px;
   overflow: hidden;
+  position: relative;
+  z-index: 1;
+  width: 110px;
+}
+
+.dimmed {
+  filter: brightness(40%);
+  pointer-events: none;
+}
+
+.win-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.win-container {
+  display: flex;
+  flex-direction: column;
+  background-color: lavender;
+  border-radius: 20px;
+  border: 1px solid purple;
+  padding: 30px;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 250px;
+  box-shadow: rgba(0,0,0,0.5);
+}
+
+.isWin {
+  font-family: "Agency FB";
+  font-size: 40px;
+}
+
+.play-again {
+  font-family: "Agency FB";
+  font-size: 25px;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  padding: 8px;
+  background-color: purple;
+}
+.play-again:hover {
+  filter: drop-shadow(1px 1px 10px purple);
+
 }
 
 .cdk-drag-preview {
