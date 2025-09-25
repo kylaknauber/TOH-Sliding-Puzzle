@@ -1,173 +1,21 @@
 <div class="sp">
-  <div class="gridBox">
-    <div class="square" id="b1"
-         cdkDropList
-         #block1List ="cdkDropList"
-         [cdkDropListData]="block1"
-         [cdkDropListConnectedTo]="[block1List, block2List, block5List]"
-         (cdkDropListDropped)="moveBlock($event)">
-      <div cdkDrag>
-        <div class="innerSquare" *ngFor="let number of block1">{{number}}</div>
-      </div>
+  <div class="gridBox" [class.dimmed]="isWinner"
+    cdkDropList (cdkDropListDropped)="moveBlock($event)" >
+    <div class="square"
+         [class.empty]="!block"
+         *ngFor="let block of blocks; let i = index"
+         cdkDrag
+         [cdkDragData]="i">
+        <div class="innerSquare" *ngIf="block">{{block}}</div>
     </div>
-    <div class="square" id="b2"
-         cdkDropList
-         #block2List ="cdkDropList"
-         [cdkDropListData]="block2"
-         [cdkDropListConnectedTo]="[block1List, block2List, block3List, block6List]"
-
-         (cdkDropListDropped)="moveBlock($event)">
-      <div cdkDrag>
-        <div class="innerSquare" *ngFor="let number of block2" >{{number}}</div>
-      </div>
-    </div>
-    <div class="square" id="b3"
-         cdkDropList
-         #block3List ="cdkDropList"
-         [cdkDropListData]="block3"
-         [cdkDropListConnectedTo]="[block3List, block2List, block4List, block7List]"
-
-         (cdkDropListDropped)="moveBlock($event)">
-      <div cdkDrag>
-        <div class="innerSquare" *ngFor="let number of block3" >{{number}}</div>
-      </div>
-    </div>
-    <div class="square" id="b4"
-         cdkDropList
-         #block4List ="cdkDropList"
-         [cdkDropListData]="block4"
-         [cdkDropListConnectedTo]="[block4List, block3List, block8List]"
-         (cdkDropListDropped)="moveBlock($event)">
-      <div cdkDrag>
-        <div class="innerSquare" *ngFor="let number of block4" >{{number}}</div>
-      </div>
-    </div>
-    <div class="square" id="b5"
-         cdkDropList
-         #block5List ="cdkDropList"
-         [cdkDropListData]="block5"
-         [cdkDropListConnectedTo]="[block5List, block1List, block6List, block9List]"
-         (cdkDropListDropped)="moveBlock($event)">
-      <div cdkDrag>
-        <div class="innerSquare" *ngFor="let number of block5" >{{number}}</div>
-      </div>
-    </div>
-    <div class="square" id="b6"
-         cdkDropList
-         #block6List ="cdkDropList"
-         [cdkDropListData]="block6"
-         [cdkDropListConnectedTo]="[block6List, block5List, block7List, block2List, block10List]"
-         (cdkDropListDropped)="moveBlock($event)">
-      <div cdkDrag>
-        <div class="innerSquare" *ngFor="let number of block6" >{{number}}</div>
-      </div>
-    </div>
-    <div class="square" id="b7"
-         cdkDropList
-         #block7List ="cdkDropList"
-         [cdkDropListData]="block7"
-         [cdkDropListConnectedTo]="[block7List, block6List, block8List, block11List, block3List]"
-         (cdkDropListDropped)="moveBlock($event)">
-      <div cdkDrag>
-        <div class="innerSquare" *ngFor="let number of block7" >{{number}}</div>
-      </div>
-    </div>
-    <div class="square" id="b8"
-         cdkDropList
-         #block8List ="cdkDropList"
-         [cdkDropListData]="block8"
-         [cdkDropListConnectedTo]="[block8List, block7List, block4List, block12List]"
-         (cdkDropListDropped)="moveBlock($event)">
-      <div cdkDrag>
-        <div class="innerSquare" *ngFor="let number of block8" >{{number}}</div>
-      </div>
-    </div>
-    <div class="square" id="b9"
-         cdkDropList
-         #block9List ="cdkDropList"
-         [cdkDropListData]="block9"
-         [cdkDropListConnectedTo]="[block9List, block5List, block10List, block13List]"
-         (cdkDropListDropped)="moveBlock($event)">
-      <div cdkDrag>
-        <div class="innerSquare" *ngFor="let number of block9" >{{number}}</div>
-      </div>
-    </div>
-    <div class="square" id="b10"
-         cdkDropList
-         #block10List ="cdkDropList"
-         [cdkDropListData]="block10"
-         [cdkDropListConnectedTo]="[block10List, block9List, block11List, block6List, block14List]"
-         (cdkDropListDropped)="moveBlock($event)">
-      <div cdkDrag>
-        <div class="innerSquare" *ngFor="let number of block10" >{{number}}</div>
-      </div>
-    </div>
-    <div class="square" id="b11"
-         cdkDropList
-         #block11List ="cdkDropList"
-         [cdkDropListData]="block11"
-         [cdkDropListConnectedTo]="[block11List, block10List, block12List, block7List, block15List]"
-         (cdkDropListDropped)="moveBlock($event)">
-      <div cdkDrag>
-        <div class="innerSquare" *ngFor="let number of block11" >{{number}}</div>
-      </div>
-    </div>
-    <div class="square" id="b12"
-         cdkDropList
-         #block12List ="cdkDropList"
-         [cdkDropListData]="block12"
-         [cdkDropListConnectedTo]="[block12List, block11List, block8List, block16List]"
-         (cdkDropListDropped)="moveBlock($event)">
-      <div cdkDrag>
-        <div class="innerSquare" *ngFor="let number of block12" >{{number}}</div>
-      </div>
-    </div>
-    <div class="square" id="b13"
-         cdkDropList
-         #block13List ="cdkDropList"
-         [cdkDropListData]="block13"
-         [cdkDropListConnectedTo]="[block13List, block9List, block14List]"
-         (cdkDropListDropped)="moveBlock($event)">
-      <div cdkDrag>
-        <div class="innerSquare" *ngFor="let number of block13" >{{number}}</div>
-      </div>
-    </div>
-    <div class="square" id="b14"
-         cdkDropList
-         #block14List ="cdkDropList"
-         [cdkDropListData]="block14"
-         [cdkDropListConnectedTo]="[block14List, block13List, block15List, block10List]"
-         (cdkDropListDropped)="moveBlock($event)">
-      <div cdkDrag>
-        <div class="innerSquare" *ngFor="let number of block14" >{{number}}</div>
-      </div>
-    </div>
-    <div class="square" id="b15"
-         cdkDropList
-         #block15List ="cdkDropList"
-         [cdkDropListData]="block15"
-         [cdkDropListConnectedTo]="[block15List, block14List, block16List, block11List]"
-         (cdkDropListDropped)="moveBlock($event)">
-      <div cdkDrag>
-        <div class="innerSquare" *ngFor="let number of block15" >{{number}}</div>
-      </div>
-    </div>
-
-    <div class="square" id="b16"
-         cdkDropList
-         #block16List ="cdkDropList"
-         [cdkDropListData]="block16"
-         [cdkDropListConnectedTo]="[block16List, block15List, block12List]"
-         (cdkDropListDropped)="moveBlock($event)">
-      <div cdkDrag>
-        <div class="innerSquare" *ngFor="let number of block16" >{{number}}</div>
-      </div>
-    </div>
-
   </div>
 
 </div>
-<button id="shuffleGame" (click)="shuffle()">Shuffle Game</button>
-<div id="winner" *ngIf="isWinner">
-  <h1>Winner!</h1>
+<button id="shuffleGame" (click)="shuffle()">Shuffle Board</button>
+<div class="win-overlay" *ngIf="isWinner">
+  <div class="win-container">
+    <h1 class="isWin">Solved!</h1>
+    <button class="play-again"
+      (click)="resetGame()">Play Again?</button>
+  </div>
 </div>
